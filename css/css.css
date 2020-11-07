@@ -199,9 +199,6 @@ body {
 .main-header-menu-btn {
 	width: 24px;
 	height: 24px;
-	background-image: url(../img/icon_cart_12273.svg);
-	background-size: contain;
-	background-repeat: no-repeat;
 	background-color: rgba(0,0,0,0);
 	border: none;
 	outline: none;
@@ -213,34 +210,64 @@ body {
 	margin-left: 63px;
 }
 
+.main-header-menu-btn svg {
+	fill: #ffffff;
+}
+
+.main-header-menu-btn:hover svg {
+	fill: #c7b299;
+}
+
+.main-header-menu-btn:active svg {
+	fill: #ffffff;
+}
+
 .main-header-menu-form {
 	position: relative;
 }
 
-.main-header-menu-search {
+.main-header-menu-search-icon {
 	width: 24px;
 	height: 24px;
-	background-image: url(../img/icon_search_12272.svg);
-	background-size: contain;
-	background-repeat: no-repeat;
-	background-position: right;
 	background-color: rgba(0,0,0,0);
 	border: none;
 	outline: none;
 	color: #ffffff;
+	fill: #ffffff;
 	margin-left: 28px;
 	padding: 0 24px 0 6px;
 	box-sizing: border-box;
 	transition: width 1s ease-out;
 }
 
+.main-header-menu-search-icon:hover svg {
+	fill: #c7b299;
+}
+
+.main-header-menu-search-icon:active svg {
+	fill: #ffffff;
+}
+
+.main-header-menu-search {
+	width: 0px;
+	height: 0px;
+	background-color: rgba(0,0,0,0);
+	border: none;
+	outline: none;
+	color: #ffffff;
+	margin-left: 28px;
+	padding: 0 6px 0 6px;
+	box-sizing: border-box;
+	transition: width 1s ease-out;
+	position: absolute;
+	top: 40px;
+	left: -215px;
+}
+
 .main-header-menu-search:focus {
 	width: 250px;
+	height: 30px;
 	background-color: #c7b299;
-	position: absolute;
-	top: 30px;
-	left: -280px;
-	transition: width 1s ease-out;
 }
 
 .main-header-carusel {
@@ -278,6 +305,12 @@ body {
 .main-header-carusel-next:hover {
 	border-top-color: #c7b299;
 	border-right-color: #c7b299;
+}
+
+.main-header-carusel-prev:active,
+.main-header-carusel-next:active {
+	border-top-color: #ffffff;
+	border-right-color: #ffffff;
 }
 
 .main-header-carusel-base h2 {
@@ -994,6 +1027,7 @@ body {
 .main-figure-svg {
 	margin: 0;
 	margin-bottom: 30px;
+	fill: #c7b299;
 }
 
 .main-figure-figcaption {
@@ -1279,10 +1313,15 @@ body {
 	display: block;
 	margin: 0 45px;
 	position: relative;
+	display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .main-links a img {
 	transition: transform 1s ease-out;
+	width: 100%;
+    height: auto;
 }
 
 .main-links a:hover:after,
@@ -1502,6 +1541,15 @@ body {
 	margin: 0;
 	margin-bottom: 26px;
 	width: 100%;
+}
+
+.main-footer-desc-widget div {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.main-footer-desc-widget div img {
+    display: block;
 }
 
 .main-footer-desc-widget div img:nth-child(1),
