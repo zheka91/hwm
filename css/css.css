@@ -409,16 +409,49 @@ body {
 	background-color: #c7b299;
 }
 
+@keyframes anim3 {
+    from {
+    	color: #555555;
+    }
+  
+    to {
+    	color: #c7b299;
+    }
+}
+
 .main-realization-card:hover .main-realization-card-span {
 	color: #c7b299;
+	animation: anim3 1s ease-in-out;
+}
+
+@keyframes anim {
+    from {
+    	fill: #555555;
+    }
+  
+    to {
+    	fill: #c7b299;
+    }
 }
 
 .main-realization-card:hover svg {
 	fill: #c7b299;
+	animation: anim 1s ease-in-out;
+}
+
+@keyframes anim2 {
+    from {
+    	background-color: #f1eee9;
+    }
+  
+    to {
+    	background-color: #c7b299;
+    }
 }
 
 .main-realization-card:hover:after {
 	background-color: #c7b299;
+	animation: anim2 1s ease-in-out;
 }
 
 .main-realization-card-i {
@@ -828,17 +861,19 @@ body {
 	border-radius: 50%;
 	outline: none;
 	border-width: 0px;
-	opacity: 0.2;
-	background-color: #000000;
-	background-image: url(../img/icon_play_10993.svg);
-	background-repeat: no-repeat;
-	background-position: center center;
+	background-color: rgba(0, 0, 0, 0.2);
 	margin: 0;
 	margin-bottom: 44px;
+	transition: transform 1s ease-out, background-color 1s ease-out;
+}
+
+.main-video-btn svg {
+	fill: #ffffff;
 }
 
 .main-video-btn:hover {
-	opacity: 0.5;
+	background-color: rgba(0, 0, 0, 0.5);
+	transform: scale(1.2);
 }
 
 .main-video-btn:active {
@@ -1031,6 +1066,11 @@ body {
 	margin: 0 15px;
 	position: relative;
 	border: 1px solid #f8f8f8;
+	transition: background 1s ease-out, border 1s ease-out;
+}
+
+.main-article-div-article img {
+	transition: filter 1s ease-out;
 }
 
 .main-article-div-cal {
@@ -1052,6 +1092,7 @@ body {
 	border-radius: 3px 3px 0px 0px;
 	text-align: center;
 	line-height: 35px;
+	transition: background 1s ease-out;
 }
 
 .main-article-div-month {
@@ -1067,6 +1108,7 @@ body {
 	border-radius: 0px 0px 3px 3px;
 	text-align: center;
 	line-height: 25px;
+	transition: background 1s ease-out;
 }
 
 .main-article-div-article-active {
@@ -1077,6 +1119,41 @@ body {
 .main-article-div-article-active .main-article-div-img {
 	filter: brightness(0.5);
 }
+
+.main-article-div-carusel-pag {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-self: flex-end;
+	position: absolute;
+	top: 180px;
+}
+
+.main-article-div-carusel-pag-item {
+	display: block;
+	width: 11px;
+	height: 11px;
+	background-color: #ffffff;
+	opacity: 0.3;
+	border-radius: 50%;
+	margin: 0 4.5px;
+	border: 2px solid transparent;
+}
+
+.main-article-div-carusel-pag-item:hover,
+.main-article-div-carusel-pag-item:active {
+	border: 2px solid #d3c1ad;
+	background-color: transparent;
+	transform: scale(1.36);
+}
+
+.main-article-div-carusel-pag-item-active {
+	border: 2px solid #d3c1ad;
+	background-color: transparent;
+	transform: scale(1.36);
+}
+
+
 
 .main-article-div-article-active .main-article-div-h2 {
 	color: #c7b299;
@@ -1204,6 +1281,10 @@ body {
 	position: relative;
 }
 
+.main-links a img {
+	transition: transform 1s ease-out;
+}
+
 .main-links a:hover:after,
 .main-links a:active:after {
     content: "";
@@ -1216,6 +1297,11 @@ body {
     left: 0;
     right: 0;
     margin: 0 auto;
+    transform: scale(1.1);
+}
+
+.main-links a:hover img {
+    transform: scale(1.1);
 }
 
 .main-footer {
@@ -1272,6 +1358,10 @@ body {
 	color: #c7b299;
 }
 
+.main-footer-desc-div-posts {
+	display: flex;
+}
+
 .main-footer-desc-posts {
 	width: 260px;
 	margin: 0 15px;
@@ -1289,10 +1379,19 @@ body {
 }
 
 .main-footer-desc-posts-item {
-	margin-bottom: 42px;
+	padding-bottom: 21px;
+	margin-bottom: 21px;
+	border-bottom: 2px solid #252525;
+	box-sizing: border-box;
+    display: block;
+    text-decoration: none;
 }
 
-.main-footer-desc-posts-item span {
+.main-footer-desc-posts-item:nth-last-of-type(1) {
+	border-bottom-width: 0px;
+}
+
+.main-footer-desc-posts-item time {
 	font-family: Montserrat;
 	font-size: 12px;
 	line-height: 20px;
@@ -1344,7 +1443,16 @@ body {
 }
 
 .main-footer-desc-twit-item {
-	margin-bottom: 42px;
+	padding-bottom: 21px;
+	margin-bottom: 21px;
+	border-bottom: 2px solid #252525;
+	box-sizing: border-box;
+	display: block;
+	text-decoration: none;
+}
+
+.main-footer-desc-twit-item:nth-last-of-type(1) {
+	border-bottom-width: 0px;
 }
 
 .main-footer-desc-twit-item p {
@@ -1357,11 +1465,11 @@ body {
 	margin-bottom: 11px;
 }
 
-.main-footer-desc-twit-item p > span {
+.main-footer-desc-twit-item p > a.hash {
 	color: #00bff3;
 }
 
-.main-footer-desc-twit-item > span {
+.main-footer-desc-twit-item > time {
 	font-family: Montserrat;
 	font-size: 12px;
 	line-height: 20px;
@@ -1406,6 +1514,10 @@ body {
 	margin-bottom: 10px;
 }
 
+.main-footer-desc-widget div img:hover {
+	transform: scale(1.3);
+}
+
 .footer {
 	background-color: #111111;
 	padding: 45px 0 52px;
@@ -1441,4 +1553,82 @@ body {
 	color: #252525;
 	margin-left: 10px;
 	margin-right: 10px;
+}
+
+
+/*
+Дполнительное задание от преподавателя:
+Создать боковой блок с кнопками социальных сетей на Вашем сайте, при наведении и(или) нажатии на иконку соцсетей должна быть анимация (например, плавное выдвижение блока).
+*/
+.soc-seti {
+	position: fixed;
+    top: 50%;
+    left: 0;
+    transform: translate(0px, -50%);
+    padding: 10px 5px;
+    box-sizing: border-box;
+}
+
+.soc-seti-icon {
+	display: block;
+	width: 42px;
+	height: 42px;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	z-index: 2;
+	transition: transform 1.5s linear;
+}
+
+.soc-seti-icon:nth-of-type(1) {
+	background-image: url('http://s1.iconbird.com/ico/0912/SomacroIconSet/w500h5001347632760twitter.png');
+}
+
+.soc-seti-icon:nth-of-type(2) {
+	background-image: url('http://s1.iconbird.com/ico/0912/SomacroIconSet/w500h5001347632752facebook500.png');
+	margin: 10px 0;
+}
+
+.soc-seti-icon:nth-of-type(3) {
+	background-image: url('http://s1.iconbird.com/ico/0912/SomacroIconSet/w500h5001347632752linkedin.png');
+	margin: 10px 0;
+}
+
+.soc-seti-icon:nth-of-type(4) {
+	background-image: url('http://s1.iconbird.com/ico/0912/SomacroIconSet/w500h5001347632752googleplusrevised.png');
+	margin: 10px 0;
+}
+
+.soc-seti-icon:nth-of-type(5) {
+	background-image: url('http://s1.iconbird.com/ico/0912/SomacroIconSet/w500h5001347632760youtube.png');
+}
+
+.soc-seti-block {
+	width: 300px;
+	height: 270px;
+	background: black;
+	border: 1px solid black;
+	position: absolute;
+	top: 0;
+	left: -248px;
+	box-sizing: border-box;
+	z-index: -1;
+	transition: left 1.5s ease-out, background-color 1.5s ease-in-out;
+}
+
+.soc-seti-icon:hover {
+	transform: rotate(360deg);
+}
+
+.soc-seti-icon:active {
+	transform: rotate(360deg) scale(1.2);
+}
+
+.soc-seti-icon:hover ~ .soc-seti-block {
+	left: 62px;
+	background-color: blue;
+}
+
+.soc-seti-icon:active ~ .soc-seti-block {
+	background-color: orange;
 }
